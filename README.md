@@ -823,3 +823,8 @@ Due to my limited amount of API calls and the gargantuan amount of data included
 ## App Components/Routing Map
 
 ![app-components](src/images/app-components.png)
+
+## Third-Party Libraries
+
+Animate.css - for home page animations
+Chart.js - for MyRecipe comparison functionality
