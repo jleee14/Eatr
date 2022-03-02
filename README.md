@@ -22,11 +22,15 @@ My web app is called Eatr. It will be powered by the Tasty API, an API that retu
 
 ![my-recipes](src/images/my-recipes.png)
 
-## User Stories
+## MVP User Stories
 
 As a user, I want to be able to search for a recipe in the home page so that I can immediately find recipes without having to navigate the app.
 
 As a user, I also want to be able to be given broad choices such as "pasta" and "soup" in the homepage so that I can receive ideas on what receipes I would like to look at upon opening the app.
+
+As a user, I want to be able to be able to click a recipe from the search and be able to see the ingredient list, direcitons and cooking time of the recipe so that I can use the receipe idea to cook what I searched for.
+
+## Post-MVP User Stories
 
 As a user, I want to be able to add recipes to a page where I can store them so that I do not have to keep the same page open for weeks/months.
 
@@ -36,7 +40,7 @@ As a user, I want to be able to filter my recipes based on the taste parameters 
 
 ## API Exmaple
 
-Due to my limited amount of API calls and the gargantuan amount of data included in the API call itself, I plan on running fetching the data in only one component, and using useContext to pass the data to the necessary components downfunnel. Most of the API data won't be used.
+Due to my limited amount of API calls and the gargantuan amount of data included in the API call itself, I plan on running/fetching the data in a minimal amount of components, and using useContext to pass the data to the necessary components downfunnel. Most of the API data won't be used.
 
 ### JSON example
 
