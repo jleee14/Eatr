@@ -826,5 +826,8 @@ Due to my limited amount of API calls and the gargantuan amount of data included
 
 ## Third-Party Libraries
 
-Animate.css - for home page animations
-Chart.js - for MyRecipe comparison functionality
+Animate.css - for home page animations:
+https://animate.style/
+
+Chart.js - for MyRecipe comparison functionality:
+https://www.chartjs.org/
