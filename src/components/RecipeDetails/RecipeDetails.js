@@ -1,7 +1,7 @@
 import React from "react";
 
 function RecipeDetails(props) {
-	return <div>Recipe Details Placeholder</div>;
+	return <div></div>;
 }
 
 export default RecipeDetails;
