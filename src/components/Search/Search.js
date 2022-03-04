@@ -4,7 +4,9 @@ import Recipe from "../Recipe/Recipe";
 
 function Search(props) {
 	const [results, setResults] = useState();
-	const [searchString, setSearchString] = useState("");
+
+	const { term } = useParams();
+	const [searchString, setSearchString] = useState(term);
 
 	function handleChange(event) {
 		setSearchString(event.target.value);
@@ -14,7 +16,7 @@ function Search(props) {
 		getRecipes(searchString);
 	}
 	function getRecipes(searchString) {
-		const url = `https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&q=${searchString}`;
+		const url = `https://tasty.p.rapidapi.com/recipes/list?from=0&size=40&q=${searchString}`;
 		fetch(url, {
 			method: "GET",
 			headers: {
@@ -32,9 +34,8 @@ function Search(props) {
 				const newRes = resArray.filter((recipe) => {
 					if (recipe.instructions) return true;
 				});
-				setResults(newRes);
 				setSearchString("");
-				console.log(results);
+				setResults(newRes);
 			})
 			.catch(console.error);
 	}
@@ -43,29 +44,30 @@ function Search(props) {
 	}, []);
 	if (!results) {
 		return <p>loading...</p>;
+	} else {
+		return (
+			<>
+				<form onSubmit={handleSubmit}>
+					<input
+						type="text"
+						onChange={handleChange}
+						value={searchString}
+						required
+					/>
+					<button>Search</button>
+				</form>
+				<div className="link-container">
+					{results.map((result) => {
+						return (
+							<Link to={`../recipe/${result.id}`} key={result.id}>
+								<Recipe result={result} key={result.id} />
+							</Link>
+						);
+					})}
+				</div>
+			</>
+		);
 	}
-	return (
-		<>
-			<form onSubmit={handleSubmit}>
-				<input
-					type="text"
-					onChange={handleChange}
-					value={searchString}
-					required
-				/>
-				<button>Search</button>
-			</form>
-			<div className="link-container">
-				{results.map((result) => {
-					return (
-						<Link to={`./recipe/${result.id}`}>
-							<Recipe result={result} key={result.id} />
-						</Link>
-					);
-				})}
-			</div>
-		</>
-	);
 }
 
 export default Search;

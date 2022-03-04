@@ -1,0 +1,59 @@
+.home-container {
+	display: grid;
+	grid-template-rows: 2fr 2fr 1fr;
+}
+
+.quick-search-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 100px;
+}
+
+.circles-container {
+	display: flex;
+	justify-content: center;
+	gap: 50px;
+	position: relative;
+}
+
+.circle-category-container {
+	height: 120px;
+	width: 120px;
+	border-radius: 50%;
+	overflow: hidden;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+.hover-container {
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	background-color: rgba(0, 0, 0, 0.3);
+	position: absolute;
+	text-decoration: none;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+}
+
+.hover-container:hover {
+	opacity: 1;
+}
+img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	display: inline-block;
+	position: absolute;
+}
+form {
+	display: flex;
+	flex-direction: column;
+}
+/* https://minibackground.com/wp-content/uploads/2019/01/Melfi-marble.jpg */
