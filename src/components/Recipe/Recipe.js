@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Recipe({ result }) {
 	return (
@@ -8,4 +9,4 @@ function Recipe({ result }) {
 	);
 }
 
-export default RecipeDetails;
+export default Recipe;

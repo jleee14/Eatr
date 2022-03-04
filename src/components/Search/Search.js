@@ -53,8 +53,8 @@ function Search(props) {
 			<div className="link-container">
 				{results.map((result) => {
 					return (
-						<Link to="/recipe/:id">
-							<RecipeDetails result={result} />
+						<Link to={`recipe/${result.id}`}>
+							<Recipe result={result} key={result.id} />
 						</Link>
 					);
 				})}
