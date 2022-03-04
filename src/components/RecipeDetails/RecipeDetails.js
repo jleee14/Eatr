@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 
 function RecipeDetails(props) {
 	const [recipe, setRecipe] = useState();
-	const [instructions, setInstructions] = useState();
+	const [instructions, setInstructions] = useState([]);
 	const [ingredientSections, setIngredientSections] = useState([]);
 	const [ingredients, setIngredients] = useState();
 	const { id } = useParams();
@@ -12,7 +12,7 @@ function RecipeDetails(props) {
 			method: "GET",
 			headers: {
 				"x-rapidapi-host": "tasty.p.rapidapi.com",
-				"x-rapidapi-key": "d34b45871dmsh64380ae6d020ad2p1e7538jsn90311ac48c8c",
+				"x-rapidapi-key": process.env.REACT_APP_TASTY_KEY,
 			},
 		})
 			.then((res) => {
@@ -39,8 +39,10 @@ function RecipeDetails(props) {
 			</div>
 			<div className="description-container">
 				<p>{recipe.description}</p>
+				<p>Time to prepare: {recipe.total_time_minutes} minutes</p>
 			</div>
 			<div className="ingredients-container">
+				<p>{recipe.yields}</p>
 				{ingredientSections.map((ingredient) => {
 					return (
 						<ul key={ingredient.name}>

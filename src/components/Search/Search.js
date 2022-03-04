@@ -27,7 +27,12 @@ function Search(props) {
 				// console.log(res);
 			})
 			.then((data) => {
-				setResults(data.results);
+				// clear out compilation recipe results (results without instructions key)
+				const resArray = data.results;
+				const newRes = resArray.filter((recipe) => {
+					if (recipe.instructions) return true;
+				});
+				setResults(newRes);
 				setSearchString("");
 				console.log(results);
 			})
@@ -53,7 +58,7 @@ function Search(props) {
 			<div className="link-container">
 				{results.map((result) => {
 					return (
-						<Link to={`recipe/${result.id}`}>
+						<Link to={`./recipe/${result.id}`}>
 							<Recipe result={result} key={result.id} />
 						</Link>
 					);
