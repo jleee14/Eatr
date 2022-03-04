@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Recipe({ result }) {
+function Recipe({ recipe }) {
 	return (
 		<div className="recipe-container">
-			<h3>{result.name}</h3>
+			<h3>{recipe.name}</h3>
 		</div>
 	);
 }

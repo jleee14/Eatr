@@ -38,6 +38,7 @@ function Home(props) {
 				</div>
 			</div>
 			<div className="search-container">
+				{/* separate searchForm component not used b/c of label for UI/UX. Label would not make sense on the "search" page, did not want to add extra props/usecontext for one label*/}
 				<form>
 					<label htmlFor="recipe-search">
 						Already know what you want? Search for it below!

@@ -1,0 +1,31 @@
+.logo-bar {
+	text-align: center;
+	padding: 10px 0;
+	background-image: url(../../images/marble.jpg);
+}
+
+#blurb {
+	position: relative;
+	bottom: 8px;
+	letter-spacing: 3px;
+	font-size: 18px;
+}
+#logo {
+	font-size: 48px;
+	letter-spacing: 15px;
+	font-weight: 700;
+}
+
+.second-bar {
+	background-color: black;
+	display: flex;
+	flex-direction: flex-start;
+	gap: 60px;
+	padding: 15px 0 15px 40px;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+	font-weight: 700;
+}

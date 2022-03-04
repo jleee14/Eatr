@@ -5,12 +5,17 @@ import { Link } from "react-router-dom";
 function Header(props) {
 	return (
 		<>
-			<h3>EATR | Powered by Tasty API</h3>
-			<div>
-				<Link to="/home">Home</Link>
+			<div className="logo-bar">
+				<span id="logo">EATR | </span>
+				<span id="blurb">Powered by Tasty API</span>
 			</div>
-			<div>
-				<Link to="/search">Search</Link>
+			<div className="second-bar">
+				<div>
+					<Link to="/home">Home</Link>
+				</div>
+				<div>
+					<Link to="/search">Search</Link>
+				</div>
 			</div>
 		</>
 	);
