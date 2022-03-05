@@ -1,3 +1,19 @@
+.search-home-container {
+	display: flex;
+	flex-direction: column;
+	width: 85%;
+	min-height: 100%;
+	padding: 50px 0;
+	align-items: center;
+	background: linear-gradient(
+		90deg,
+		rgba(255, 255, 255, 0) 0%,
+		rgba(255, 255, 255, 1) 8%,
+		rgba(255, 255, 255, 1) 92%,
+		rgba(255, 255, 255, 0) 100%
+	);
+}
+
 .link-container > a {
 	color: black;
 }
@@ -5,6 +21,6 @@
 .link-container {
 	display: flex;
 	flex-wrap: wrap;
-	width: 75%;
-	gap: 25px;
+	justify-content: center;
+	gap: 25px 50px;
 }

@@ -1,7 +1,7 @@
 .home-container {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: center;
 	height: 100%;
 }
 
@@ -9,18 +9,30 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
 	margin-bottom: 60px;
 }
 
 .circles-container {
 	display: flex;
-	justify-content: space-around;
+	justify-content: center;
+	gap: 3%;
 	width: 80%;
 	position: relative;
 }
 
-#meal-container {
-	width: 50%;
+.search-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}
+
+.search-bar {
+	display: flex;
+	gap: 10px;
+	align-items: center;
 }
 .circle-category-container {
 	height: 120px;
@@ -36,7 +48,7 @@
 	height: 100%;
 	width: 100%;
 	border-radius: 50%;
-	background-color: rgba(0, 0, 0, 0.3);
+	background-color: rgba(0, 0, 0, 0.4);
 	position: absolute;
 	text-decoration: none;
 	color: white;
@@ -57,14 +69,22 @@ img {
 	display: inline-block;
 	position: absolute;
 }
-form {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 20px;
-}
 
 input {
-	height: 50px;
+	height: 40px;
+	width: 280px;
+	border-radius: 20px;
+	padding: 10px 0;
+	text-align: center;
+	font-size: 14px;
+}
+
+button {
+	color: white;
+	background-color: rgb(255, 0, 0);
+	height: 40px;
+	border-radius: 20px;
+	width: 100px;
+	border: none;
 }
 /* https://minibackground.com/wp-content/uploads/2019/01/Melfi-marble.jpg */

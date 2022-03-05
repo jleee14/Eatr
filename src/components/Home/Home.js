@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Home.css";
 import catData from "./data/cat-search.json";
 import mealData from "./data/meal-search.json";
-import { Link } from "react-router-dom";
+import { Link, useLinkClickHandler } from "react-router-dom";
 
 function Home(props) {
+	const [searchTerm, setSearchTerm] = useState();
+	function handleChange(event) {
+		setSearchTerm(event.target.value);
+	}
 	return (
 		<div className="home-container">
 			<div className="quick-search-container">
@@ -39,13 +43,15 @@ function Home(props) {
 			</div>
 			<div className="search-container">
 				{/* separate searchForm component not used b/c of label for UI/UX. Label would not make sense on the "search" page, did not want to add extra props/usecontext for one label*/}
-				<form>
-					<label htmlFor="recipe-search">
-						Already know what you want? Search for it below!
-					</label>
-					<input type="text" id="recipe-search" />
-					<button>Search</button>
-				</form>
+				<label htmlFor="recipe-search">
+					Already know what you want? Search for it below!
+				</label>
+				<div className="search-bar">
+					<input type="text" id="recipe-search" onChange={handleChange} />
+					<Link to={`/search/${searchTerm}`}>
+						<button>Search</button>
+					</Link>
+				</div>
 			</div>
 		</div>
 	);

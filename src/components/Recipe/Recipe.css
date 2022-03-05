@@ -1,27 +1,28 @@
 .recipe-container {
-	height: 175px;
-	width: 350px;
+	height: 150px;
+	width: 300px;
 	display: flex;
 	flex-direction: flex-start;
 }
 
 .recipe-container > img {
-	height: 175px;
-	width: 175px;
-	border: 2px solid black;
+	height: 150px;
+	width: 150px;
+	border-radius: 10px 0 0 10px;
 }
 
 .name-container {
 	position: relative;
-	left: 175px;
-	height: 175px;
-	width: 175px;
-	background-color: rgb(65, 65, 65);
+	left: 150px;
+	height: 150px;
+	width: 150px;
+	padding: 0px 15px;
+	background-color: rgb(0, 0, 0);
 	color: white;
-	z-index: 3;
-	text-align: center;
-}
-
-h3 {
 	font-size: 12px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 0 10px 10px 0;
 }

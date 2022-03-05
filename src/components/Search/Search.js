@@ -42,7 +42,7 @@ function Search(props) {
 	}
 	function getRecipes(searchString) {
 		dispatch({ type: "loading" });
-		const url = `https://tasty.p.rapidapi.com/recipes/list?from=0&size=40&q=${searchString}`;
+		const url = `https://tasty.p.rapidapi.com/recipes/list?from=0&size=50&q=${searchString}`;
 		fetch(url, {
 			method: "GET",
 			headers: {
@@ -84,7 +84,7 @@ function Search(props) {
 				const newRes = resArray.filter((recipe) => {
 					if (recipe.instructions) return true;
 				});
-				// setSearchString("");
+				setSearchString("");
 				setResults(newRes);
 				console.log(newRes);
 			})
