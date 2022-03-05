@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useReducer } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, Navigate, useParams } from "react-router-dom";
 import Recipe from "../Recipe/Recipe";
 import "./Search.css";
 
@@ -103,7 +103,7 @@ function Search(props) {
 	return (
 		//  left below as 1 return instead of individual components to reduce need for further component nesting
 		<div className="search-home-container">
-			<form onSubmit={handleSubmit}>
+			<form className="search-input-container" onSubmit={handleSubmit}>
 				<input
 					type="text"
 					onChange={handleChange}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import "./RecipeDetails.css";
 
 function RecipeDetails(props) {
 	const [recipe, setRecipe] = useState();
@@ -33,20 +34,23 @@ function RecipeDetails(props) {
 	}
 	return (
 		<div className="recipe-details-container">
-			<h4>{recipe.name}</h4>
+			<div className="name-details-container">
+				<h2>{recipe.name}</h2>
+				<p>Time to prepare: {recipe.total_time_minutes} minutes</p>
+				<p>{recipe.yields}</p>
+			</div>
 			<div className="image-container">
 				<img src={recipe.thumbnail_url} alt={recipe.name} />
 			</div>
 			<div className="description-container">
 				<p>{recipe.description}</p>
-				<p>Time to prepare: {recipe.total_time_minutes} minutes</p>
 			</div>
 			<div className="ingredients-container">
-				<p>{recipe.yields}</p>
+				<h4>Ingredients</h4>
 				{ingredientSections.map((ingredient) => {
 					return (
 						<ul key={ingredient.name}>
-							{ingredient.name}
+							<span>{ingredient.name}</span>
 
 							{ingredient.components.map((item) => {
 								return <li key={item.id}>{item.raw_text}</li>;

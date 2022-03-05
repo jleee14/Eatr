@@ -31,7 +31,7 @@
 
 .search-bar {
 	display: flex;
-	gap: 10px;
+	gap: 20px;
 	align-items: center;
 }
 .circle-category-container {
@@ -48,7 +48,7 @@
 	height: 100%;
 	width: 100%;
 	border-radius: 50%;
-	background-color: rgba(0, 0, 0, 0.4);
+	background-color: rgba(0, 0, 0, 0.5);
 	position: absolute;
 	text-decoration: none;
 	color: white;

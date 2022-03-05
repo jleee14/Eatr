@@ -14,11 +14,18 @@
 	);
 }
 
+.search-input-container {
+	display: flex;
+	gap: 20px;
+	justify-content: center;
+}
+
 .link-container > a {
 	color: black;
 }
 
 .link-container {
+	margin-top: 50px;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
