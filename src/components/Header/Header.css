@@ -1,19 +1,21 @@
 .logo-bar {
 	text-align: center;
-	padding: 10px 0;
+	padding: 11px 0;
 	background-image: url(../../images/marble.jpg);
 }
 
 #blurb {
 	position: relative;
 	bottom: 8px;
-	letter-spacing: 3px;
+	letter-spacing: 4px;
 	font-size: 18px;
 }
 #logo {
-	font-size: 48px;
-	letter-spacing: 15px;
+	font-size: 64px;
+	letter-spacing: 20px;
 	font-weight: 700;
+	position: relative;
+	top: 4px;
 }
 
 .second-bar {
