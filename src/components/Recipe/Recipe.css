@@ -1,0 +1,27 @@
+.recipe-container {
+	height: 175px;
+	width: 350px;
+	display: flex;
+	flex-direction: flex-start;
+}
+
+.recipe-container > img {
+	height: 175px;
+	width: 175px;
+	border: 2px solid black;
+}
+
+.name-container {
+	position: relative;
+	left: 175px;
+	height: 175px;
+	width: 175px;
+	background-color: rgb(65, 65, 65);
+	color: white;
+	z-index: 3;
+	text-align: center;
+}
+
+h3 {
+	font-size: 12px;
+}

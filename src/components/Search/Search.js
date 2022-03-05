@@ -102,7 +102,7 @@ function Search(props) {
 
 	return (
 		//  left below as 1 return instead of individual components to reduce need for further component nesting
-		<div>
+		<div className="search-home-container">
 			<form onSubmit={handleSubmit}>
 				<input
 					type="text"

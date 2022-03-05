@@ -8,7 +8,7 @@ function RecipeDetails(props) {
 	const [ingredients, setIngredients] = useState();
 	const { id } = useParams();
 	useEffect(() => {
-		fetch(`https://tasty.p.rapidapi.com/recipes/get-more-info?=${id}`, {
+		fetch(`https://tasty.p.rapidapi.com/recipes/get-more-info?id=${id}`, {
 			method: "GET",
 			headers: {
 				"x-rapidapi-host": "tasty.p.rapidapi.com",

@@ -1,3 +1,10 @@
 .link-container > a {
-	color: blue;
+	color: black;
+}
+
+.link-container {
+	display: flex;
+	flex-wrap: wrap;
+	width: 75%;
+	gap: 25px;
 }

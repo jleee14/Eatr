@@ -24,7 +24,7 @@ function Home(props) {
 			</div>
 			<div className="quick-search-container">
 				<p>Meal search:</p>
-				<div className="circles-container">
+				<div className="circles-container" id="meal-container">
 					{mealData.map((meal) => {
 						return (
 							<Link to={`/search/${meal.meal}`} key={meal.meal}>
