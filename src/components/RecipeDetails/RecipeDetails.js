@@ -36,11 +36,19 @@ function RecipeDetails(props) {
 		<div className="recipe-details-container">
 			<div className="name-details-container">
 				<h2>{recipe.name}</h2>
-				<p>Time to prepare: {recipe.total_time_minutes} minutes</p>
-				<p>{recipe.yields}</p>
+				{recipe.total_time_minutes && (
+					<p>Time to prepare: {recipe.total_time_minutes} minutes</p>
+				)}
+				{recipe.yields && <p>{recipe.yields}</p>}
 			</div>
-			<div className="image-container">
-				<img src={recipe.thumbnail_url} alt={recipe.name} />
+			<div className="media-container">
+				{recipe.original_video_url ? (
+					<video controls width="450">
+						<source src={recipe.original_video_url} type="video/mp4"></source>
+					</video>
+				) : (
+					<img src={recipe.thumbnail_url} alt={recipe.name} id="recipe-image" />
+				)}
 			</div>
 			<div className="description-container">
 				<p>{recipe.description}</p>

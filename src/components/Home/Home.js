@@ -12,7 +12,7 @@ function Home(props) {
 	return (
 		<div className="home-container">
 			<div className="quick-search-container">
-				<p>Try these categories:</p>
+				<p className="search-blurb">Try these categories:</p>
 				<div className="circles-container">
 					{catData.map((category) => {
 						return (
@@ -27,7 +27,7 @@ function Home(props) {
 				</div>
 			</div>
 			<div className="quick-search-container">
-				<p>Meal search:</p>
+				<p className="search-blurb">Meal search:</p>
 				<div className="circles-container" id="meal-container">
 					{mealData.map((meal) => {
 						return (
@@ -43,13 +43,19 @@ function Home(props) {
 			</div>
 			<div className="search-container">
 				{/* separate searchForm component not used b/c of label for UI/UX. Label would not make sense on the "search" page, did not want to add extra props/usecontext for one label*/}
-				<form onSubmit={<Navigate to={`/search/${searchTerm}`} />}>
-					<label htmlFor="recipe-search">
+				<form
+					className="home-search-form"
+					onSubmit={<Navigate to={`/search/${searchTerm}`} />}
+				>
+					<label htmlFor="recipe-search" className="search-blurb">
 						Already know what you want? Search for it below!
 					</label>
 					<div className="search-bar">
 						<input type="text" id="recipe-search" onChange={handleChange} />
-						<button>Search</button>
+						{/* form search breaks without this link component */}
+						<Link to={`/search/${searchTerm}`}>
+							<button>Search</button>
+						</Link>
 					</div>
 				</form>
 			</div>
