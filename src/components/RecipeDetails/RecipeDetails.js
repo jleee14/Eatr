@@ -1,23 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import "./RecipeDetails.css";
+import RatingModal from "../RatingModal/RatingModal.js";
 
 function RecipeDetails(props) {
-	const initialRating = {
-		sweet: 0,
-		salty: 0,
-		rich: 0,
-		spicy: 0,
-		sour: 0,
-		isRated: false,
-	};
 	const [recipe, setRecipe] = useState();
 	const [instructions, setInstructions] = useState([]);
 	const [ingredientSections, setIngredientSections] = useState([]);
-	const [rating, setRating] = useState(initialRating);
+	const [modalToggle, setModalToggle] = useState(false);
 	const { id } = useParams();
-	function ratingSubmit(event) {
-		event.preventDefault();
+	function modalVisible(event) {
+		setModalToggle(!modalToggle);
 	}
 	useEffect(() => {
 		fetch(`https://tasty.p.rapidapi.com/recipes/get-more-info?id=${id}`, {
@@ -85,67 +78,17 @@ function RecipeDetails(props) {
 					})}
 				</ol>
 			</div>
-			<button id="add-myrecipes">Add to MyRecipes</button>
-			<div className="modal-container" id="modal">
-				<div className="modal-form-container">
-					<form className="rating-container">
-						<h3 id="rating-form-name">Rate this dish!</h3>
-						<div className="rating-label-container">
-							<div className="taste-category">
-								<label htmlFor="sweet">Sweetness: </label>
-								<input
-									type="number"
-									min="0"
-									max="10"
-									className="rating-input"
-									id="sweet"
-								/>
-							</div>
-							<div className="taste-category">
-								<label htmlFor="salty">Saltiness: </label>
-								<input
-									type="number"
-									min="0"
-									max="10"
-									className="rating-input"
-									id="salty"
-								/>
-							</div>
-							<div className="taste-category">
-								<label htmlFor="rich">Richness/Umami: </label>
-								<input
-									type="number"
-									min="0"
-									max="10"
-									className="rating-input"
-									id="rich"
-								/>
-							</div>
-							<div className="taste-category">
-								<label htmlFor="spicy">Spiciness: </label>
-								<input
-									type="number"
-									min="0"
-									max="10"
-									className="rating-input"
-									id="spicy"
-								/>
-							</div>
-							<div className="taste-category">
-								<label htmlFor="sour">Sour/Bitterness: </label>
-								<input
-									type="number"
-									min="0"
-									max="10"
-									className="rating-input"
-									id="sour"
-								/>
-							</div>
-						</div>
-						<button id="rating-save-button">Save your ratings!</button>
-					</form>
-				</div>
-			</div>
+			<button id="add-myrecipes" onClick={modalVisible}>
+				Add to MyRecipes
+			</button>
+			{modalToggle && (
+				<>
+					<button onClick={modalVisible} id="close-modal">
+						X
+					</button>
+					<RatingModal recipe={recipe} />
+				</>
+			)}
 		</div>
 	);
 }
