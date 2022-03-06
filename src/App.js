@@ -12,6 +12,7 @@ import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import Search from "./components/Search/Search";
 import RecipeDetails from "./components/RecipeDetails/RecipeDetails";
+import MyRecipes from "./components/MyRecipes/MyRecipes";
 
 function App() {
 	return (
@@ -30,6 +31,7 @@ function App() {
 						{/* below allows user to use hardcoded links from homepage to search or search from browser */}
 						<Route path="/search/:term" element={<Search />} />
 						<Route path="/recipe/:id" element={<RecipeDetails />} />
+						<Route path="/myrecipes" element={<MyRecipes />} />
 					</Routes>
 				</main>
 			</div>

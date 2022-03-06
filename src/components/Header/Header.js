@@ -16,6 +16,9 @@ function Header(props) {
 				<div>
 					<Link to="/search">Search</Link>
 				</div>
+				<div>
+					<Link to="/myrecipes">MyRecipes</Link>
+				</div>
 			</div>
 		</>
 	);
