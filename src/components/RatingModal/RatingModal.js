@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./RatingModal.css";
 
 function RatingModal({ recipe }) {
@@ -8,12 +8,32 @@ function RatingModal({ recipe }) {
 		rich: 0,
 		spicy: 0,
 		sour: 0,
-		isRated: false,
 	};
+	const [rating, setRating] = useState(initialRating);
+	const [localRecipe, setLocalRecipe] = useState(recipe);
+
+	function handleChange(event) {
+		setRating({ ...rating, [event.target.id]: event.target.value });
+	}
+	function combineRating(event) {
+		console.log("combine happening");
+		setLocalRecipe({ ...localRecipe, ratings: rating });
+	}
+
+	function sendRecipe(event) {
+		event.preventDefault();
+		combineRating();
+		console.log("filling local storage");
+		window.localStorage.setItem(localRecipe.id, JSON.stringify(localRecipe));
+	}
+
+	useEffect(() => {
+		combineRating();
+	}, [rating]);
 	return (
 		<div className="modal-container" id="modal">
 			<div className="modal-form-container">
-				<form className="rating-container">
+				<form className="rating-container" onSubmit={sendRecipe}>
 					<h3 id="rating-form-name">Rate this dish!</h3>
 					<div className="rating-label-container">
 						<div className="taste-category">
@@ -24,6 +44,8 @@ function RatingModal({ recipe }) {
 								max="10"
 								className="rating-input"
 								id="sweet"
+								value={rating.sweet}
+								onChange={handleChange}
 								required
 							/>
 						</div>
@@ -35,6 +57,8 @@ function RatingModal({ recipe }) {
 								max="10"
 								className="rating-input"
 								id="salty"
+								value={rating.salty}
+								onChange={handleChange}
 								required
 							/>
 						</div>
@@ -46,6 +70,8 @@ function RatingModal({ recipe }) {
 								max="10"
 								className="rating-input"
 								id="rich"
+								value={rating.rich}
+								onChange={handleChange}
 								required
 							/>
 						</div>
@@ -57,6 +83,8 @@ function RatingModal({ recipe }) {
 								max="10"
 								className="rating-input"
 								id="spicy"
+								value={rating.spicy}
+								onChange={handleChange}
 								required
 							/>
 						</div>
@@ -68,6 +96,8 @@ function RatingModal({ recipe }) {
 								max="10"
 								className="rating-input"
 								id="sour"
+								value={rating.sour}
+								onChange={handleChange}
 								required
 							/>
 						</div>

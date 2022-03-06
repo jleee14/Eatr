@@ -110,6 +110,7 @@ ol li::before {
 	background-color: rgba(0, 0, 0, 0);
 	color: black;
 	font-size: 18px;
+	font-weight: 700;
 }
 
 #close-modal:hover {
