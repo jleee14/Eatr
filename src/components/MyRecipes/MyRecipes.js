@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./MyRecipes.css";
 import Recipe from "../Recipe/Recipe";
+import Graph from "../Graph/Graph";
 
 function MyRecipes(props) {
 	const [recipeArr, setRecipeArr] = useState([]);
@@ -20,6 +21,7 @@ function MyRecipes(props) {
 	return (
 		<div className="myrecipes-container">
 			<div className="link-container">
+				{/* for loop returns null values into state, filter necessary to filter them out */}
 				{recipeArr
 					.filter((fullRecipe) => fullRecipe)
 					.map((recipe) => {
@@ -30,7 +32,9 @@ function MyRecipes(props) {
 						);
 					})}
 			</div>
-			<div className="graph-container">Graph</div>
+			<div className="graph-container">
+				<Graph />
+			</div>
 		</div>
 	);
 }

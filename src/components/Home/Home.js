@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Home.css";
 import catData from "./data/cat-search.json";
 import mealData from "./data/meal-search.json";
+import healthyData from "./data/healthy-search.json";
 import { Link, Navigate } from "react-router-dom";
 
 function Home(props) {
@@ -14,12 +15,12 @@ function Home(props) {
 			<div className="quick-search-container">
 				<p className="search-blurb">Try these categories:</p>
 				<div className="circles-container">
-					{catData.map((category) => {
+					{catData.map((meal) => {
 						return (
-							<Link to={`/search/${category.search}`} key={category.category}>
+							<Link to={`/search/${meal.search}`} key={meal.category}>
 								<div className="circle-category-container">
-									<img src={category.url} alt={category.category} />
-									<div className="hover-container">{category.category}</div>
+									<img src={meal.url} alt={meal.category} />
+									<div className="hover-container">{meal.category}</div>
 								</div>
 							</Link>
 						);
@@ -31,38 +32,30 @@ function Home(props) {
 				<div className="circles-container" id="meal-container">
 					{mealData.map((meal) => {
 						return (
-							<Link to={`/search/${meal.meal}`} key={meal.meal}>
+							<Link to={`/search/${meal.category}`} key={meal.category}>
 								<div className="circle-category-container">
-									<img src={meal.url} alt={meal.meal} />
-									<div className="hover-container">{meal.meal}</div>
+									<img src={meal.url} alt={meal.category} />
+									<div className="hover-container">{meal.category}</div>
 								</div>
 							</Link>
 						);
 					})}
 				</div>
 			</div>
-			<div className="search-container">
-				{/* separate searchForm component not used b/c of label for UI/UX. Label would not make sense on the "search" page, did not want to add extra props/usecontext for one label*/}
-				<form
-					className="home-search-form"
-					onSubmit={<Navigate to={`/search/${searchTerm}`} />}
-				>
-					<label htmlFor="recipe-search" className="search-blurb">
-						Already know what you want? Search for it below!
-					</label>
-					<div className="search-bar">
-						<input
-							type="text"
-							id="recipe-search"
-							onChange={handleChange}
-							required
-						/>
-						{/* form search breaks without this link component */}
-						<Link to={`/search/${searchTerm}`}>
-							<button>Search</button>
-						</Link>
-					</div>
-				</form>
+			<div className="quick-search-container">
+				<p className="search-blurb">Feeling healthy? Try these categories:</p>
+				<div className="circles-container" id="meal-container">
+					{healthyData.map((meal) => {
+						return (
+							<Link to={`/search/${meal.category}`} key={meal.category}>
+								<div className="circle-category-container">
+									<img src={meal.url} alt={meal.category} />
+									<div className="hover-container">{meal.category}</div>
+								</div>
+							</Link>
+						);
+					})}
+				</div>
 			</div>
 		</div>
 	);
