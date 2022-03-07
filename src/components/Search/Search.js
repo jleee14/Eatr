@@ -4,22 +4,18 @@ import Recipe from "../Recipe/Recipe";
 import "./Search.css";
 
 function Search(props) {
-	const initialState = {
+	const initialReducerState = {
 		loading: false,
 		result: null,
 		error: "",
 	};
-	const [state, dispatch] = useReducer(apiStateReducer, initialState);
+	const [state, dispatch] = useReducer(apiStateReducer, initialReducerState);
 	const { loading, result, error } = state;
-	const [results, setResults] = useState([]);
-
-	const { term } = useParams();
-	const [searchString, setSearchString] = useState(term);
 
 	function apiStateReducer(state, action) {
 		switch (action.type) {
 			case "loading": {
-				return { ...initialState, loading: true };
+				return { ...initialReducerState, loading: true };
 			}
 			case "success": {
 				return { ...state, loading: false, result: action.data };
@@ -32,6 +28,10 @@ function Search(props) {
 			}
 		}
 	}
+
+	const [results, setResults] = useState([]);
+	const { term } = useParams();
+	const [searchString, setSearchString] = useState(term);
 
 	function handleChange(event) {
 		setSearchString(event.target.value);
@@ -61,7 +61,6 @@ function Search(props) {
 				}
 			})
 			.then((data) => {
-				console.log("logging data", data);
 				// API does not return 404 error if no search queries found.
 				if (data.count === 0 && searchString === undefined) {
 					return dispatch({
@@ -86,7 +85,6 @@ function Search(props) {
 				});
 				setSearchString("");
 				setResults(newRes);
-				console.log(newRes);
 			})
 			.catch((err) => {
 				dispatch({
@@ -112,7 +110,7 @@ function Search(props) {
 				/>
 				<button>Search</button>
 			</form>
-			<div className="link-container">
+			<div className="link-container" id="search-link-container">
 				{result &&
 					results.map((recipe) => {
 						return (

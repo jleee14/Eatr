@@ -1,9 +1,34 @@
-import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import React, { useEffect, useState, useReducer } from "react";
+import { useParams } from "react-router-dom";
 import "./RecipeDetails.css";
 import RatingModal from "../RatingModal/RatingModal.js";
 
 function RecipeDetails(props) {
+	// const initialReducerState = {
+	// 	loading: false,
+	// 	result: null,
+	// 	error: "",
+	// };
+	// const [state, dispatch] = useReducer(apiStateReducer, initialReducerState);
+	// const { loading, result, error } = state;
+
+	// function apiStateReducer(state, action) {
+	// 	switch (action.type) {
+	// 		case "loading": {
+	// 			return { ...initialReducerState, loading: true };
+	// 		}
+	// 		case "success": {
+	// 			return { ...state, loading: false, result: action.data };
+	// 		}
+	// 		case "error": {
+	// 			return { ...state, loading: false, error: action.error };
+	// 		}
+	// 		default: {
+	// 			return state;
+	// 		}
+	// 	}
+	// }
+
 	const [recipe, setRecipe] = useState();
 	const [instructions, setInstructions] = useState([]);
 	const [ingredientSections, setIngredientSections] = useState([]);
@@ -13,6 +38,7 @@ function RecipeDetails(props) {
 		setModalToggle(!modalToggle);
 	}
 	useEffect(() => {
+		// dispatch({type: loading});
 		fetch(`https://tasty.p.rapidapi.com/recipes/get-more-info?id=${id}`, {
 			method: "GET",
 			headers: {
@@ -21,20 +47,34 @@ function RecipeDetails(props) {
 			},
 		})
 			.then((res) => {
-				console.log(res);
+				// if (res.status === 404) {
+				// 	return dispatch({
+				// 		type: "error",
+				// 		error: `Please enter a valid recipe ID!`,
+				// 	});
+				// } else if (res.status === 200) {
 				return res.json();
+				// }
 			})
 			.then((data) => {
+				// dispatch({
+				// 	type: "success",
+				// 	data,
+				// });
 				setRecipe(data);
 				setIngredientSections(data.sections);
 				setInstructions(data.instructions);
 			})
 			.catch((err) => {
-				console.error(err);
+				// dispatch({
+				// 	type: "error",
+				// 	error: "Oops, something went wrong! Please try again later.",
+				// });
+				console.log(err);
 			});
 	}, []);
 	if (!recipe) {
-		return <p>loading recipe data...</p>;
+		return <p>"loading data"</p>;
 	}
 	return (
 		<div className="recipe-details-container">
@@ -83,10 +123,11 @@ function RecipeDetails(props) {
 			</button>
 			{modalToggle && (
 				<>
-					<button onClick={modalVisible} id="close-modal">
-						X
-					</button>
-					<RatingModal recipe={recipe} />
+					<RatingModal
+						recipe={recipe}
+						modalToggle={modalToggle}
+						modalVisible={modalVisible}
+					/>
 				</>
 			)}
 		</div>

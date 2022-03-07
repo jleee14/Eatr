@@ -31,3 +31,7 @@
 	justify-content: center;
 	gap: 25px 50px;
 }
+
+#search-link-container {
+	width: 100%;
+}

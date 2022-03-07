@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./RatingModal.css";
 
-function RatingModal({ recipe }) {
+function RatingModal({ recipe, modalVisible, modalToggle }) {
 	const initialRating = {
 		sweet: 0,
 		salty: 0,
@@ -16,14 +16,12 @@ function RatingModal({ recipe }) {
 		setRating({ ...rating, [event.target.id]: event.target.value });
 	}
 	function combineRating(event) {
-		console.log("combine happening");
 		setLocalRecipe({ ...localRecipe, ratings: rating });
 	}
 
 	function sendRecipe(event) {
 		event.preventDefault();
 		combineRating();
-		console.log("filling local storage");
 		window.localStorage.setItem(localRecipe.id, JSON.stringify(localRecipe));
 	}
 
@@ -34,6 +32,9 @@ function RatingModal({ recipe }) {
 		<div className="modal-container" id="modal">
 			<div className="modal-form-container">
 				<form className="rating-container" onSubmit={sendRecipe}>
+					<button onClick={modalVisible} id="close-modal">
+						X
+					</button>
 					<h3 id="rating-form-name">Rate this dish!</h3>
 					<div className="rating-label-container">
 						<div className="taste-category">

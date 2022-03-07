@@ -55,3 +55,21 @@
 #rating-save-button {
 	width: 200px;
 }
+
+#close-modal {
+	z-index: 10;
+	position: absolute;
+	top: 2%;
+	left: 90%;
+	border-radius: 0;
+	width: 25px;
+	height: 20px;
+	background-color: rgba(0, 0, 0, 0);
+	color: black;
+	font-size: 18px;
+	font-weight: 700;
+}
+
+#close-modal:hover {
+	cursor: pointer;
+}

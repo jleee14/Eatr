@@ -51,7 +51,12 @@ function Home(props) {
 						Already know what you want? Search for it below!
 					</label>
 					<div className="search-bar">
-						<input type="text" id="recipe-search" onChange={handleChange} />
+						<input
+							type="text"
+							id="recipe-search"
+							onChange={handleChange}
+							required
+						/>
 						{/* form search breaks without this link component */}
 						<Link to={`/search/${searchTerm}`}>
 							<button>Search</button>
