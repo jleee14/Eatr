@@ -7,6 +7,7 @@ function Recipe({ recipe }) {
 		<div className="recipe-container">
 			<img src={recipe.thumbnail_url} alt={recipe.name} />
 			<div className="name-container">{recipe.name}</div>
+			{recipe.ratings && <button>Click me</button>}
 		</div>
 	);
 }

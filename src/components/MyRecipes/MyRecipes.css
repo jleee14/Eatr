@@ -4,11 +4,12 @@
 	width: 100%;
 }
 
-.savedrecipes-container {
+.link-container {
 	width: 70%;
 }
 
 .graph-container {
 	width: 30%;
 	background-color: black;
+	color: white;
 }

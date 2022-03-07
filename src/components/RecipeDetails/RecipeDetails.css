@@ -96,7 +96,7 @@ ol li::before {
 	position: absolute;
 	top: 20px;
 	left: 85%;
-	width: 200px;
+	width: 10%;
 }
 
 #close-modal {
