@@ -77,8 +77,8 @@ export default function Graph({ tasteData, index, setCount }) {
 					graphValue2.ratings.spicy,
 					graphValue2.ratings.sour,
 				],
-				backgroundColor: "rgba(55, 99, 2, 0.2)",
-				borderColor: "rgba(55, 99, 2, 1)",
+				backgroundColor: "rgba(81, 171, 36, 0.2)",
+				borderColor: "rgba(81, 171, 36, 1)",
 				borderWidth: 1,
 			},
 			// empty dataset to keep the scale of the radar axes at 10

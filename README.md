@@ -1,8 +1,69 @@
-# Project Proposal
+# Eatr
 
 ## App Description
 
 My web app is called Eatr. It will be powered by the Tasty API, an API that returns receipe data found on Tasty.com. My app will allow users to search for recipes and return nutritional information, ingredient lists, and cooking instructions. Users will be able to add recipes from their search to a "My Recipes" portal, where the users can rate their foods on a variation of the 5 core taste scale (salty, bitter/sour, spicy, sweet, richness/umami). The users' data ratings on each recipe (and their recipes in My Recipes) will be stored in local storage, and the users will be able to compare ratings using a graphical interface on the page. Finally, in the "Recipe Generator" component, the user will be able to return recipes stored in My Recipes based on their desired flavor profile.
+
+## Motivation
+
+I've been cooking a lot more in the kitchen recently, and I've become more interested in cooking meals with complete flavor profiles. This site was designed with that in mind, especially given the recipe comparer component in MyRecipes. Users will be able to rate dishes according to their own palette and create well-rounded, flavorful meals using this app!
+
+## App Link
+
+https://eatr-app.netlify.app/home
+
+## Third-Party Libraries
+
+Animate.css - for home page animations:
+https://animate.style/
+
+Chart.js - for MyRecipe comparison functionality:
+https://www.chartjs.org/
+
+## API Used
+
+https://rapidapi.com/apidojo/api/tasty/
+
+## Contribution Guidelines
+
+If you'd like to provide any feedback including:
+
+- Report a bug
+- Submit a fix
+- Propose new features
+
+Please follow the instructions below:
+
+### For new features/reworks/refactoring
+
+- Fork the repo and create a new branch.
+- Please commit often and write any new APIs/frameworks added in README.
+- Make sure your code is tested.
+- Issue the pull request.
+
+### Report Bugs
+
+- Provide a description of the bug using Issue
+- How it was produced and steps to reproduce.
+- Expected behavior and what actually happened.
+
+## App Screenshots
+
+### Homepage
+
+![home-finished](src/images/home-page-finished.png)
+
+### Search
+
+![search-finished](src/images/search-finished.png)
+
+### Recipe Details
+
+![recipe-details-finished](src/images/recipe-details-finished.png)
+
+### MyRecipes
+
+![my-recipes-finished](src/images/my-recipes-finished.png)
 
 ## Wireframes
 
@@ -827,11 +888,3 @@ Due to my limited amount of API calls and the gargantuan amount of data included
 ## App Components/Routing Map
 
 ![app-components](src/images/app-components.png)
-
-## Third-Party Libraries
-
-Animate.css - for home page animations:
-https://animate.style/
-
-Chart.js - for MyRecipe comparison functionality:
-https://www.chartjs.org/
