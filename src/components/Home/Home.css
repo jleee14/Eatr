@@ -97,3 +97,11 @@ button:hover {
 	background-color: rgb(133, 0, 0);
 }
 /* Marble background source: https://minibackground.com/wp-content/uploads/2019/01/Melfi-marble.jpg */
+
+/* animation */
+
+.animate__animated.animate__backInDown,
+.animate__animated.animate__backInLeft,
+.animate__animated.animate__backInRight {
+	--animate-duration: 2s;
+}

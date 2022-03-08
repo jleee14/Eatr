@@ -12,9 +12,9 @@ function Home(props) {
 	}
 	return (
 		<div className="home-container">
-			<div className="quick-search-container">
+			<div className="quick-search-container ">
 				<p className="search-blurb">Try these categories:</p>
-				<div className="circles-container">
+				<div className="circles-container animate__animated animate__backInDown">
 					{catData.map((meal) => {
 						return (
 							<Link to={`/search/${meal.search}`} key={meal.category}>
@@ -27,9 +27,12 @@ function Home(props) {
 					})}
 				</div>
 			</div>
-			<div className="quick-search-container">
+			<div className="quick-search-container ">
 				<p className="search-blurb">Meal search:</p>
-				<div className="circles-container" id="meal-container">
+				<div
+					className="circles-container animate__animated animate__backInLeft"
+					id="meal-container"
+				>
 					{mealData.map((meal) => {
 						return (
 							<Link to={`/search/${meal.category}`} key={meal.category}>
@@ -44,7 +47,10 @@ function Home(props) {
 			</div>
 			<div className="quick-search-container">
 				<p className="search-blurb">Feeling healthy? Try these categories:</p>
-				<div className="circles-container" id="meal-container">
+				<div
+					className="circles-container animate__animated animate__backInRight"
+					id="meal-container"
+				>
 					{healthyData.map((meal) => {
 						return (
 							<Link to={`/search/${meal.category}`} key={meal.category}>
