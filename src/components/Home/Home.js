@@ -1,19 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Home.css";
 import catData from "./data/cat-search.json";
 import mealData from "./data/meal-search.json";
 import healthyData from "./data/healthy-search.json";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Home(props) {
-	const [searchTerm, setSearchTerm] = useState();
-	function handleChange(event) {
-		setSearchTerm(event.target.value);
-	}
 	return (
 		<div className="home-container">
 			<div className="quick-search-container ">
-				<p className="search-blurb">Try these categories:</p>
+				<p className="search-blurb">
+					Looking for recipe ideas? Try these categories:
+				</p>
 				<div className="circles-container animate__animated animate__backInDown">
 					{catData.map((meal) => {
 						return (
@@ -27,8 +25,10 @@ function Home(props) {
 					})}
 				</div>
 			</div>
-			<div className="quick-search-container ">
-				<p className="search-blurb">Meal search:</p>
+			<div className="quick-search-container">
+				<p className="search-blurb">
+					Looking for a meal in specific? Try these:
+				</p>
 				<div
 					className="circles-container animate__animated animate__backInLeft"
 					id="meal-container"

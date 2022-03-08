@@ -107,11 +107,3 @@ export default function Graph({ tasteData, index, setCount }) {
 		</>
 	);
 }
-
-// data.datasets
-
-// recipeArr[i].ratings
-
-// filter, get accurate array.
-
-// for in Loops ==> get ratings
