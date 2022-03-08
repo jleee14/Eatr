@@ -20,35 +20,14 @@ ChartJS.register(
 	Legend
 );
 
-export default function Graph({ tasteData, index }) {
+export default function Graph({ tasteData, index, setCount }) {
 	const initialGraphState = {
 		recipeName: "",
 		ratings: "",
 	};
 	const [graphValue1, setGraphValue1] = useState(initialGraphState);
 	const [graphValue2, setGraphValue2] = useState(initialGraphState);
-	// const [ratingsArray, setRatingsArray] = useState([]);
 
-	// function buildData(tasteData) {
-	// 	if (ratingsArray.length === 0) {
-	// 		for (let taste in tasteData.ratings) {
-	// 			console.log("i am looping");
-	// 			setRatingsArray((ratingsArray) => [
-	// 				...ratingsArray,
-	// 				tasteData.ratings[taste],
-	// 			]);
-	// 		}
-	// 	} else {
-	// 		setRatingsArray([]);
-	// 		for (let taste in tasteData.ratings) {
-	// 			console.log("i am overwriting");
-	// 			setRatingsArray((ratingsArray) => [
-	// 				...ratingsArray,
-	// 				tasteData.ratings[taste],
-	// 			]);
-	// 		}
-	// 	}
-	// }
 	function updateGraphData(tasteData, index) {
 		if (index === 0) {
 			setGraphValue1({
@@ -68,6 +47,12 @@ export default function Graph({ tasteData, index }) {
 			console.log("else");
 			return;
 		}
+	}
+
+	function clearGraphData() {
+		setGraphValue1(initialGraphState);
+		setGraphValue2(initialGraphState);
+		setCount(-1);
 	}
 
 	const data = {
@@ -109,14 +94,20 @@ export default function Graph({ tasteData, index }) {
 		],
 	};
 	useEffect(() => {
-		// buildData(tasteData);
 		updateGraphData(tasteData, index);
 		setGraphData(data);
-	}, [tasteData]);
+	}, [tasteData, index]);
 
 	const [graphData, setGraphData] = useState(data);
 
-	return <Radar data={graphData} />;
+	return (
+		<>
+			<Radar data={graphData} />
+			<button id="clear-recipes" onClick={clearGraphData}>
+				Clear all recipes
+			</button>
+		</>
+	);
 }
 
 // data.datasets

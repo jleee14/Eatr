@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./RatingModal.css";
 
-function RatingModal({ recipe, modalVisible, modalToggle }) {
+function RatingModal({ recipe, modalVisible }) {
 	const initialRating = {
 		sweet: 0,
 		salty: 0,

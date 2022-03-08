@@ -20,12 +20,6 @@ function MyRecipes(props) {
 		}
 	}
 
-	// function generateRatingArray(event) {
-	// 	for (const taste in rating) {
-	// 		setRatingsArray((ratingsArray) => [...ratingsArray, rating[taste]]);
-	// 	}
-	// }
-
 	useEffect(() => {
 		retrieveRecipes();
 	}, []);
@@ -52,8 +46,13 @@ function MyRecipes(props) {
 						);
 					})}
 			</div>
-			<div className="graph-container">
-				<Graph tasteData={graphData} index={dataCounter} />
+			<div className="graph-compare-container">
+				<h2>Recipe Comparer</h2>
+				<Graph
+					tasteData={graphData}
+					index={dataCounter}
+					setCount={setDataCounter}
+				/>
 			</div>
 		</div>
 	);

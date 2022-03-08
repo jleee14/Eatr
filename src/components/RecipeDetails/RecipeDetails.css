@@ -57,9 +57,12 @@
 	align-items: center;
 	justify-content: center;
 }
-.media-container > img {
+.media-container > img,
+.media-container > video {
 	height: 50%;
 	width: 30%;
+	position: fixed;
+	top: 40%;
 }
 
 #recipe-image {
@@ -97,4 +100,11 @@ ol li::before {
 	top: 20px;
 	left: 85%;
 	width: 10%;
+}
+
+.error-container {
+	padding: 20%;
+	font-size: 36px;
+	font-weight: 700;
+	text-align: center;
 }

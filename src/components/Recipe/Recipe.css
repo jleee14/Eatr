@@ -38,4 +38,7 @@ input {
 #set-recipe {
 	background-color: red;
 	z-index: 1000;
+	width: 20px;
+	height: 20px;
+	border-radius: 0;
 }

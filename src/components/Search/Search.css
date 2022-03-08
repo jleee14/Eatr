@@ -35,3 +35,8 @@
 #search-link-container {
 	width: 100%;
 }
+
+#search-error {
+	padding: 10%;
+	font-size: 24px;
+}

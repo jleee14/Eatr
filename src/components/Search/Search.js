@@ -119,8 +119,16 @@ function Search(props) {
 							</Link>
 						);
 					})}
-				{loading && "Loading results..."}
-				{error && error}
+				{loading && (
+					<div className="error-container" id="search-error">
+						"Loading results..."
+					</div>
+				)}
+				{error && (
+					<div className="error-container" id="search-error">
+						{error}
+					</div>
+				)}
 			</div>
 		</div>
 	);

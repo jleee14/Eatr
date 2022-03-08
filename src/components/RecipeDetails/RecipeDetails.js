@@ -49,7 +49,7 @@ function RecipeDetails(props) {
 				if (res.status === 404) {
 					return dispatch({
 						type: "error",
-						error: `Please enter a valid recipe ID!`,
+						error: `Recipe not found! Please enter a valid recipe ID!`,
 					});
 				} else if (res.status === 200) {
 					return res.json();
@@ -73,9 +73,9 @@ function RecipeDetails(props) {
 			});
 	}, []);
 	if (loading) {
-		return <div>"loading data"</div>;
+		return <div className="error-container">"Loading data..."</div>;
 	} else if (error) {
-		return <div>{error}</div>;
+		return <div className="error-container">{error}</div>;
 	}
 	return (
 		<div className="recipe-details-container">

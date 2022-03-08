@@ -8,10 +8,21 @@
 	width: 70%;
 }
 
-.graph-container {
+.graph-compare-container {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-items: center;
 	width: 30%;
 	background-color: white;
+	gap: 15px;
+	border-left: 5px solid black;
+}
+.graph-compare-container > h2 {
+	font-size: 36px;
+	padding: 0 15px 0 0;
+}
+
+#clear-recipes {
+	width: 200px;
 }
