@@ -16,7 +16,11 @@ function RatingModal({ recipe, modalVisible, modalToggle }) {
 		setRating({ ...rating, [event.target.id]: event.target.value });
 	}
 	function combineRating(event) {
-		setLocalRecipe({ ...localRecipe, ratings: rating });
+		setLocalRecipe({
+			...localRecipe,
+			ratings: rating,
+			ratingsArr: [],
+		});
 	}
 
 	function sendRecipe(event) {

@@ -6,18 +6,24 @@ import Graph from "../Graph/Graph";
 
 function MyRecipes(props) {
 	const [recipeArr, setRecipeArr] = useState([]);
-	// const [recipe, setRecipe] = useState();
+	const [graphData, setGraphData] = useState(null);
 	function retrieveRecipes(event) {
-		for (let recipe in localStorage) {
-			const object = localStorage.getItem(recipe);
+		for (const storedRecipe in localStorage) {
+			const object = localStorage.getItem(storedRecipe);
 			const newObject = JSON.parse(object);
 			setRecipeArr((recipeArr) => [...recipeArr, newObject]);
 		}
 	}
+
+	// function generateRatingArray(event) {
+	// 	for (const taste in rating) {
+	// 		setRatingsArray((ratingsArray) => [...ratingsArray, rating[taste]]);
+	// 	}
+	// }
+
 	useEffect(() => {
 		retrieveRecipes();
 	}, []);
-	// look up cleanup function for useEffect
 	return (
 		<div className="myrecipes-container">
 			<div className="link-container">
@@ -26,14 +32,20 @@ function MyRecipes(props) {
 					.filter((fullRecipe) => fullRecipe)
 					.map((recipe) => {
 						return (
-							<Link to={`../recipe/${recipe.id}`} key={recipe.id}>
-								<Recipe recipe={recipe} key={recipe.id} />
-							</Link>
+							<>
+								<Link to={`../recipe/${recipe.id}`} key={recipe.id}>
+									<Recipe
+										recipe={recipe}
+										key={recipe.id}
+										setGraphData={setGraphData}
+									/>
+								</Link>
+							</>
 						);
 					})}
 			</div>
 			<div className="graph-container">
-				<Graph />
+				<Graph graphData={graphData} />
 			</div>
 		</div>
 	);

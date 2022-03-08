@@ -9,7 +9,9 @@
 }
 
 .graph-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	width: 30%;
-	background-color: black;
-	color: white;
+	background-color: white;
 }

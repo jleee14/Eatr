@@ -34,3 +34,8 @@
 input {
 	font-size: 18px;
 }
+
+#set-recipe {
+	background-color: red;
+	z-index: 1000;
+}
