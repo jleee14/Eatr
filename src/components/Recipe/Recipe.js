@@ -2,18 +2,22 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Recipe.css";
 
-function Recipe({ recipe, setGraphData }) {
-	const initialGraphData = {
-		recipeName: "",
-		ratings: "",
-	};
+function Recipe({ recipe, graphData, setGraphData, count, setCount }) {
 	function clickSet(event) {
 		event.preventDefault();
 		setGraphData({
-			...initialGraphData,
+			...graphData,
 			recipeName: recipe.name,
 			ratings: recipe.ratings,
 		});
+		increaseCounter();
+	}
+	function increaseCounter(event) {
+		if (count === 1) {
+			setCount(1);
+		} else {
+			setCount(count + 1);
+		}
 	}
 	return (
 		<div className="recipe-container">

@@ -5,8 +5,13 @@ import Recipe from "../Recipe/Recipe";
 import Graph from "../Graph/Graph";
 
 function MyRecipes(props) {
+	const initialGraphData = {
+		recipeName: "",
+		ratings: "",
+	};
 	const [recipeArr, setRecipeArr] = useState([]);
-	const [graphData, setGraphData] = useState(null);
+	const [graphData, setGraphData] = useState(initialGraphData);
+	const [dataCounter, setDataCounter] = useState(-1);
 	function retrieveRecipes(event) {
 		for (const storedRecipe in localStorage) {
 			const object = localStorage.getItem(storedRecipe);
@@ -37,7 +42,10 @@ function MyRecipes(props) {
 									<Recipe
 										recipe={recipe}
 										key={recipe.id}
+										graphData={graphData}
 										setGraphData={setGraphData}
+										setCount={setDataCounter}
+										count={dataCounter}
 									/>
 								</Link>
 							</>
@@ -45,7 +53,7 @@ function MyRecipes(props) {
 					})}
 			</div>
 			<div className="graph-container">
-				<Graph graphData={graphData} />
+				<Graph tasteData={graphData} index={dataCounter} />
 			</div>
 		</div>
 	);
