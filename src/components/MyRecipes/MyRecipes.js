@@ -59,7 +59,7 @@ function MyRecipes(props) {
 								recipes that you've already rated! This tool will help you plan
 								meals that are balanced in taste! In order to add a recipe to
 								the recipe comparer, double click the red plus on the recipe you
-								want to add. You can add up to 3 recipes at a time to the chart.
+								want to add. You can add up to 2 recipes at a time to the chart.
 								In order to clear the recipes, click the "Clear all recipes"
 								button on the bottom of the chart! Enjoy!
 							</p>
