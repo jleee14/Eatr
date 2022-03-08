@@ -46,7 +46,7 @@ function RecipeDetails(props) {
 			},
 		})
 			.then((res) => {
-				if (res.status === 404) {
+				if (res.status === "404 (Not Found)") {
 					return dispatch({
 						type: "error",
 						error: `Recipe not found! Please enter a valid recipe ID!`,
@@ -59,7 +59,6 @@ function RecipeDetails(props) {
 				dispatch({
 					type: "success",
 				});
-				console.log(data);
 				setRecipe(data);
 				setIngredientSections(data.sections);
 				setInstructions(data.instructions);
@@ -69,7 +68,6 @@ function RecipeDetails(props) {
 					type: "error",
 					error: "Oops, something went wrong! Please try again later.",
 				});
-				console.log(err);
 			});
 	}, []);
 	if (loading) {

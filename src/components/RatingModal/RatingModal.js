@@ -19,7 +19,6 @@ function RatingModal({ recipe, modalVisible }) {
 		setLocalRecipe({
 			...localRecipe,
 			ratings: rating,
-			ratingsArr: [],
 		});
 	}
 

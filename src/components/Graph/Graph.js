@@ -35,16 +35,13 @@ export default function Graph({ tasteData, index, setCount }) {
 				recipeName: tasteData.recipeName,
 				ratings: tasteData.ratings,
 			});
-			console.log("set graphvalue1");
 		} else if (index === 1) {
 			setGraphValue2({
 				...graphValue2,
 				recipeName: tasteData.recipeName,
 				ratings: tasteData.ratings,
 			});
-			console.log("set graphvalue2");
 		} else {
-			console.log("else");
 			return;
 		}
 	}
@@ -84,6 +81,7 @@ export default function Graph({ tasteData, index, setCount }) {
 				borderColor: "rgba(55, 99, 2, 1)",
 				borderWidth: 1,
 			},
+			// empty dataset to keep the scale of the radar axes at 10
 			{
 				label: "",
 				data: [10, 0, 0, 0, 0],

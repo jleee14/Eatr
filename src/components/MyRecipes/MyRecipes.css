@@ -13,6 +13,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	position: relative;
 	width: 30%;
 	background-color: white;
 	gap: 15px;
@@ -25,4 +26,11 @@
 
 #clear-recipes {
 	width: 200px;
+}
+
+#help-button {
+	width: 40px;
+	position: absolute;
+	top: 2%;
+	left: 85%;
 }
