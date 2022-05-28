@@ -45,6 +45,7 @@ function MyRecipes(props) {
 										count={dataCounter}
 									/>
 								</Link>
+								{/* use context potentially for passing data */}
 							</>
 						);
 					})}
