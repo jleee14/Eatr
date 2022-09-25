@@ -101,35 +101,57 @@ button:hover {
 
 /* Media queries */
 
+
 @media screen and (max-width: 1200px) {
 	.search-blurb {
 		font-size: 20px;
 	}
+	
 	.circles-container {
 		gap: 1rem;
 	}
+	
 	.circle-category-container {
 		height: 6rem;
 		width: 6rem;
 	}
+	
 	.hover-container {
 		font-size: 14px;
 	}
-
-
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (max-width: 992px) {
+	.circle-category-container {
+		height: 5rem;
+		width: 5rem;
+	}
 
+	.circles-container {
+		gap: .75rem;
+	}
+
+	.search-blurb {
+		font-size: 18px;
+	}
+
+	.quick-search-container {
+		gap: 1rem;
+	}
 }
 
-@media screen and (min-width: 768px) {
-
+/* last circle design */
+@media screen and (max-width: 768px) {
+	.circles-container {
+		flex-wrap: wrap;
+	}
+	.circle-category-container {
+		height: 4rem;
+		width: 4rem;
+	}
 }
 
-@media screen and (min-width: 600px) {
-
-}
+/* change circles to bars */
 @media screen and (max-width: 600px) {
 
 }

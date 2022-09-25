@@ -1,33 +1,82 @@
 .logo-bar {
 	text-align: center;
-	padding: 11px 0;
+	padding: .625rem 0;
 	background-image: url(../../images/marble.jpg);
 }
 
 #blurb {
 	position: relative;
-	bottom: 8px;
-	letter-spacing: 4px;
-	font-size: 18px;
+	bottom: .4rem;
+	letter-spacing: .2rem;
+	font-size: 1rem;
 }
 #logo {
-	font-size: 64px;
-	letter-spacing: 20px;
+	font-size: 3.5rem;
+	letter-spacing: 1rem;
 	font-weight: 700;
 	position: relative;
-	top: 4px;
+	top: .2rem;
 }
 
 .second-bar {
 	background-color: black;
 	display: flex;
 	flex-direction: flex-start;
-	gap: 60px;
-	padding: 15px 0 15px 40px;
+	gap: 3.33rem;
+	padding: .8rem 0 .8rem 2.25rem;
 }
 
 a {
 	color: white;
 	text-decoration: none;
 	font-weight: 700;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 768px) {
+	#logo {
+		font-size: 3rem;
+		letter-spacing: .8rem;
+	}
+	#blurb {
+		letter-spacing: .15rem;
+	}
+	.logo-bar {
+		padding: .85rem 0;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	#logo {
+		font-size: 2.5rem;
+		letter-spacing: .6rem;
+	}
+
+	#blurb {
+		letter-spacing: .15rem;
+		bottom: .3rem;
+		font-size: .8rem;
+	}
+
+	.logo-bar {
+		padding: 1.1rem 0;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	#logo {
+		font-size: 2rem;
+		letter-spacing: .6rem;
+	}
+
+	#blurb {
+		letter-spacing: .15rem;
+		bottom: .2rem;
+		font-size: .7rem;
+	}
+
+	.logo-bar {
+		padding: 1.25rem 0;
+	}
 }
