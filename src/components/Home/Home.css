@@ -68,23 +68,9 @@ img {
 	position: absolute;
 }
 
-input {
-	height: 40px;
-	width: 280px;
-	border-radius: 20px;
-	padding: 10px 0;
-	text-align: center;
-	font-size: 14px;
-}
 
-button {
-	color: white;
-	background-color: rgb(255, 0, 0);
-	height: 40px;
-	border-radius: 1.5rem;
-	width: 100px;
-	border: none;
-}
+
+
 
 button:hover {
 	background-color: rgb(133, 0, 0);
@@ -150,8 +136,21 @@ button:hover {
 		width: 4rem;
 	}
 }
-
-/* change circles to bars */
-@media screen and (max-width: 600px) {
-
+@media screen and (max-width: 480px) {
+	.circle-category-container {
+		height: 3.5rem;
+		width: 3.5rem;
+	}
+	
+	.circles-container {
+		gap: .5rem;
+	}
+	
+	.search-blurb {
+		font-size: 14px;
+	}
+	
+	.quick-search-container {
+		gap: 1rem;
+	}
 }
