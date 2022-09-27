@@ -20,16 +20,15 @@
 	border-left: 5px solid black;
 }
 .graph-compare-container > h2 {
-	font-size: 36px;
-	padding: 0 15px 0 0;
+	font-size: 2rem;
 }
 
 #clear-recipes {
-	width: 200px;
+	width: 10rem;
 }
 
 #help-button {
-	width: 40px;
+	width: 2.25rem;
 	position: absolute;
 	top: 2%;
 	left: 85%;
@@ -57,4 +56,35 @@
 
 #myrecipes-help > h3 {
 	margin: 0;
+}
+
+@media screen and (max-width: 1200px) {
+	.graph-compare-container>h2 {
+		font-size: 1.5rem;
+	}
+	#help-button {
+		left: 82.5%;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.graph-compare-container {
+		width: 40%;
+	}
+	.graph-compare-container>h2 {
+		font-size: 1.25rem;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	#help-button {
+		width: 1.5rem;
+		height: 1.5rem;
+	}
+	#clear-recipes {
+		width: 8rem;
+	}
+	.graph-compare-container {
+		width: 50%;
+	}
 }
