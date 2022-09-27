@@ -76,7 +76,7 @@ button {
 	}
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
 	.link-container {
 		gap: .75rem 1rem;
 	}

@@ -98,7 +98,7 @@ input {
 		left: 4rem;
 		height: 4rem;
 		width: 4rem;
-		padding: 0 .5rem;
+		padding: .5rem .5rem;
 	}
 
 	.recipe-container>img {
@@ -113,6 +113,7 @@ input {
 	}
 
 	.name-container {
-		font-size: .6rem;
+		font-size: .55rem;
+		font-weight: 700;
 	}
 }

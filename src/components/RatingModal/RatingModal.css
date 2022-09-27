@@ -8,7 +8,7 @@
 .modal-form-container {
 	position: absolute;
 	background-color: white;
-	width: 20%;
+	width: 25%;
 	height: 45%;
 	max-height: 400px;
 	left: 50%;
@@ -47,8 +47,8 @@
 }
 
 .taste-category > .rating-input {
-	width: 55px;
-	height: 30px;
+	width: 3rem;
+	height: 1.6rem;
 	border-radius: 0;
 }
 
@@ -72,4 +72,56 @@
 
 #close-modal:hover {
 	cursor: pointer;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1200px) {
+	.modal-form-container{
+		width: 30%;	
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.modal-form-container {
+		width: 35%;
+	}
+	#rating-form-name{
+		font-size: 1.25rem;
+	}
+	.taste-category > label {
+		font-size: .9rem;
+	}
+	
+}
+
+@media screen and (max-width: 768px) {
+	.modal-form-container {
+		width: 40%;
+	}
+	.taste-category > .rating-input {
+		width: 2.5rem;
+		height: 1.25rem;
+		font-size: .8rem;
+	}
+	.taste-category>label {
+		font-size: .8rem;
+	}
+	#rating-save-button{
+		width: 8rem;
+	}
+	#close-modal{
+		left: 87%;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.modal-form-container {
+		width: 50%;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.modal-form-container {
+		width: 65%;
+	}
 }
